@@ -1,4 +1,4 @@
-fun main() {
+fun main(args : Array<String>) {
     println("Bem vindo ao bytebank")
     val contaAlex = Conta("Alex", 1000)
     contaAlex.deposita(200.0)
