@@ -1,9 +1,9 @@
 package br.com.gutembergpraia.bytebank.model
 
 abstract class Conta(
-    var titular: Cliente,
-    var numero: Int,
-) {
+    val titular: Cliente,
+    val numero: Int,
+): Autenticavel by titular {
     var saldo = 0.0
         protected set
 

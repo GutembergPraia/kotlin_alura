@@ -4,33 +4,22 @@ import br.com.gutembergpraia.bytebank.model.Endereco
 
 
 fun main(args : Array<String>) {
-    val endereco = Endereco(
-            logradouro = "Rua vergueiro",
-            complemento = "Alura",
-            cep = "000000-000"
-    )
-    val enderecoNovo = Endereco(
-            logradouro = "Rua vergueiro",
-            complemento = "Alura",
-            cep = "000000-000"
-    )
-
-    println(endereco.equals(endereco))
-
-    println(endereco.hashCode())
-    println(enderecoNovo.hashCode())
-
-    println(endereco)
-    println(enderecoNovo)
-
-    println("${endereco.javaClass}@${
-        Integer.toHexString(endereco.hashCode())
-    }")
-
-    println("${enderecoNovo.javaClass}@${
-        Integer.toHexString(enderecoNovo.hashCode())
-    }")
+    var enderecoNulo: Endereco? = Endereco(logradouro = "rua vergueiro", complemento = "prédio")
+    val logradouroNovo: String? = enderecoNulo?.logradouro
+    enderecoNulo?.let {
+        println(it.logradouro.length)
+        val tamanhoComplemento: Int =
+                it.complemento?.length ?: throw IllegalStateException("Complemento não pode ser vazio")
+        println(tamanhoComplemento)
+    }
+    teste("")
+    teste(1)
 }
+
+fun teste(valor: Any){
+    val numero: Int? = valor as? Int
+}
+
 
 
 
